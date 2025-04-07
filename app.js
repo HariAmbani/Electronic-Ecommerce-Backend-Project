@@ -40,4 +40,14 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+const mongoose = require('mongoose')
+
+mongoose.connect('mongodb://localhost:27017/Ecommerce')
+
+const db = mongoose.connection;
+
+db.once('open',()=>{
+    console.log("Connect to mongodb")
+})
+
 module.exports = app;
