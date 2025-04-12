@@ -1,5 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
+var cors = require('cors')
+var jwt = require('jsonwebtoken')
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -14,6 +16,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -49,5 +52,21 @@ const db = mongoose.connection;
 db.once('open',()=>{
     console.log("Connect to mongodb")
 })
+
+const { MongoClient } = require('mongodb')
+const client = new MongoClient('mongodb://localhost:27017/')
+
+async function authorization(req, res, next){
+  const token = req.headers.authorization;
+  jwt.verify(token,"hello-world",(error,data)=>{
+    if(error){
+      return res.status(403).send("user is not authorized")
+    }
+    req.user = data
+    next()
+  })
+}
+
+
 
 module.exports = app;
