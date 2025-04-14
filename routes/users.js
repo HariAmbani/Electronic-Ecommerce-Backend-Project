@@ -88,7 +88,10 @@ router.post("/login", async (req, res) => {
       user: {
         username: user.username,
         fullname: user.fullname,
-        role: user.role,  // Include role and fullname
+        email: user.email,
+        phone: user.phone,
+        state: user.state,
+        role: user.role,
       }
     });
   } else {
