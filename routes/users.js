@@ -73,17 +73,30 @@ router.get("/profile/:filename",(req,res)=>{
 })
 
 
-router.post("/login",async(req,res)=>{
-  const {username, password} = req.body;
-  const user = await authenticate(username, password)
-  if (user){
-    const jwtToken = jwt.sign({username:user.username, role:"admin"}, "hello-world", {expiresIn:'1h'}) //here hello-world is the secret key 
-    res.json(jwtToken)
-  }else{
-    res.status(403).send("invalid user")
-  }
+router.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+  const user = await authenticate(username, password);
+  if (user) {
+    const jwtToken = jwt.sign(
+      { id: user._id, username: user.username, role: user.role },
+      "hello-world",
+      { expiresIn: '1h' }
+    );
 
-})
+    res.json({
+      token: jwtToken,
+      user: {
+        username: user.username,
+        fullname: user.fullname,
+        role: user.role,  // Include role and fullname
+      }
+    });
+  } else {
+    res.status(403).json({ status: "error", message: "Invalid user" });
+  }
+});
+
+
 
 
 async function authenticate(username, password) {
