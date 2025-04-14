@@ -1,20 +1,77 @@
 const express = require('express');
-const router = express.Router();
-const { MongoClient } = require('mongodb');
-const client = new MongoClient('mongodb://localhost:27017/');
+const User = require('../models/usersModel')
 const jwt = require('jsonwebtoken')
+const multer = require('multer')
+const router = express.Router();
+const path = require("path");
+const bcrypt = require('bcrypt'); // Make sure it's imported
 
-router.post('/create', async (req, res) => {
+// Serve static files from uploads/ (e.g., /users/uploads/filename.jpg)
+router.use('/profilePhotos', express.static(path.join(__dirname, 'profilePictures')));
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, 'profilePictures')); // Correct path
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(null, uniqueSuffix + path.extname(file.originalname));
+  },
+});
+
+
+const upload = multer({storage})
+
+router.post("/create", upload.single("profilePhoto"), async (req, res) => {
+  const { fullname, username, email, phone, address, state, password } = req.body;
+  const profilePhoto = req.file ? req.file.filename : null;
+
   try {
-    console.log("Incoming data:", req.body);
-    await createUser(req.body);
-    const { user,pass } = req.body;
-    res.status(200).send('${username} your account created successfully');
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.json({
+        status: "error",
+        message: "Email already exists. Please use a different email.",
+      });
+    }
+
+    const newUser = new User({
+      fullname,
+      username,
+      email,
+      phone,
+      address,
+      state,
+      password,               // Will be hashed in pre-save hook
+      plainPassword: password,
+      profilePhoto,
+      // role: 'user',        // Optional: not needed unless you override
+    });
+    
+    
+
+    await newUser.save();
+
+    return res.json({
+      status: "success",
+      message: "User created successfully.",
+    });
   } catch (err) {
-    console.error("Error creating user:", err);
-    res.status(500).send("Something went wrong");
+    console.error("Signup error:", err);
+    return res.status(500).json({
+      status: "error",
+      message: "Internal server error while creating user.",
+    });
   }
 });
+
+router.get("/profile/:filename",(req,res)=>{
+  const {filename} = req.params //equivalent to const filename = req.params.filename 
+  const filepath = path.join(__dirname,'/profilePictures',filename)
+  console.log(filepath)
+  res.sendFile(filepath)
+})
+
 
 router.post("/login",async(req,res)=>{
   const {username, password} = req.body;
@@ -23,33 +80,19 @@ router.post("/login",async(req,res)=>{
     const jwtToken = jwt.sign({username:user.username, role:"admin"}, "hello-world", {expiresIn:'1h'}) //here hello-world is the secret key 
     res.json(jwtToken)
   }else{
-    res.json("invalid user")
     res.status(403).send("invalid user")
   }
 
 })
 
-async function createUser(data)
-{
-  await client.connect();
-  const database = await client.db("Ecommerce")
-  const collection = await database.collection("users")
-  await collection.insertOne(data)
-  console.log("inserted successfully")
-  await client.close()
-}
 
-async function authenticate(username,password)
-{
-  await client.connect();
-  const database = await client.db("Ecommerce")
-  const collection = await database.collection("users")
-  return await collection.findOne({
-    username:username,
-    password:password
-  })
+async function authenticate(username, password) {
+  const user = await User.findOne({ username: username });
+  if (!user) return null;
+  const isPasswordValid = await bcrypt.compare(password, user.password);
+  if (!isPasswordValid) return null;
+  return user;
 }
-
 
 module.exports = router;
 

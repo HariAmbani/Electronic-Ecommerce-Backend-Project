@@ -55,10 +55,10 @@ router.post('/createNext', (req,res)=>{
 //url parameter
 router.get('/:productId',async (req,res)=>{
     const abc = req.params.productId
-    comsole.log(abc)
+    console.log(abc)
     res.send("get received")
     const result = await Product.find({productId:abc})
-    res.join(result)
+    res.json(result)
 })
 
 //query parameter

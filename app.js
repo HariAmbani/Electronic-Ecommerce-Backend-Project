@@ -2,6 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var cors = require('cors')
 var jwt = require('jsonwebtoken')
+var multer = require('multer')
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -24,8 +25,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/uploads', express.static('uploads'));
 app.use('/users', usersRouter);
 app.use('/products',productRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,7 +48,6 @@ app.use(function(err, req, res, next) {
 });
 
 const mongoose = require('mongoose')
-
 mongoose.connect('mongodb://localhost:27017/Ecommerce')
 
 const db = mongoose.connection;
@@ -53,20 +56,24 @@ db.once('open',()=>{
     console.log("Connect to mongodb")
 })
 
-const { MongoClient } = require('mongodb')
-const client = new MongoClient('mongodb://localhost:27017/')
+// const { MongoClient } = require('mongodb')
+// const client = new MongoClient('mongodb://localhost:27017/')
 
-async function authorization(req, res, next){
-  const token = req.headers.authorization;
-  jwt.verify(token,"hello-world",(error,data)=>{
-    if(error){
-      return res.status(403).send("user is not authorized")
-    }
-    req.user = data
-    next()
-  })
-}
+// app.post("/users/create",async (req,res)=>{
+//   await createUser(req.body)
+//   res.status(200).send("user created successfully")
+// })
 
+// async function authorization(req, res, next){
+//   const token = req.headers.authorization;
+//   jwt.verify(token,"hello-world",(error,data)=>{
+//     if(error){
+//       return res.status(403).send("user is not authorized")
+//     }
+//     req.user = data
+//     next()
+//   })
+// }
 
 
 module.exports = app;

@@ -1,0 +1,894 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0059)https://webstream.sastra.edu/sastrapwi/usermanager/home.jsp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="https://webstream.sastra.edu/sastrapwi/images/sastra_logo_1.gif" type="Image/x-icon" rel="icon">
+
+
+
+
+
+
+
+    <title>SASTRA Deemed-to-be University::Parent Home Page ...</title>
+        <link href="https://webstream.sastra.edu/sastrapwi/images/sastra_logo_1.gif" type="Image/x-icon" rel="icon"> 
+        <link href="./sastra fee recipt till sem3_files/content01.css" type="text/css" rel="stylesheet">
+        <link href="./sastra fee recipt till sem3_files/styles01.css" type="text/css" rel="stylesheet">
+        <link href="./sastra fee recipt till sem3_files/cssStyles.css" type="text/css" rel="stylesheet">
+        <script src="./sastra fee recipt till sem3_files/jquery-3.4.1.js.download"></script>
+        <script src="./sastra fee recipt till sem3_files/GaugeMeter.js.download"></script>
+        <style>
+        body {
+            background: url('../images/sastra_logo_1.gif') no-repeat ;
+            background-position: center;
+            opacity: 0.99;
+            filter: alpha(opacity=99); /* For IE8 and earlier */
+            height: 100%;
+            margin-right: 0;
+        }
+        </style>
+        <script type="text/javascript">
+            function funTimeTable(){
+                urlNew="../academy/frmStudentTimetable.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);                
+                //window.open(urlNew);
+            }     
+            function funGrievance(){
+                urlNew="../academy/StudentsGrievances.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);   
+            }
+            function funCertificateRequest(){
+                urlNew="../academy/studentCertificateRegistration.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);                
+            }            
+            function funTranscriptRequest(){
+                urlNew="../academy/transcriptRequest.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);                 
+            }
+            function funStaffAssessment(){
+                urlNew="../academy/staffAssessmentNew.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);
+            }
+            function funGuestHouse(){
+                urlNew="../academy/roomrequest.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);
+            }   
+            function funFeedback(){
+//                urlNew="../academy/Feedback.jsp";
+                urlNew="../academy/FeedbackEntry.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);
+            }
+            function funFeedback(){
+                urlNew="../academy/FeedbackEntry.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);
+            }
+            function funScholarPublication(arg){
+                if(arg == 1){
+                    urlNew="../academy/ScholarConference.jsp";
+                }else if(arg == 2){
+                    urlNew="../academy/ScholarPublication.jsp";
+                }else if(arg ==3){
+                    urlNew="../academy/ScholarPublicationPeer.jsp";
+                }
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);                
+            }
+            function funWelfareFundRequest(){
+                urlNew="../academy/WelfareFundRequest.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);                
+            }
+            function funWelfareFundStatus(){
+                urlNew="../academy/WelfareFundStatus.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);                
+            }
+            function funWelfareFundRenewal(){
+                urlNew="../academy/WelfareFundRenewal.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);                
+            }
+            function funDeansMeritList(){
+                urlNew="../academy/DeansAndMeritList.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew); 
+            }
+            function funHonoursUpload(){
+                urlNew="../academy/HonoursCeritificateUpload.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew); 
+            }
+            function funBusRegistration(){
+                urlNew="../academy/BusRegistration.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew); 
+            }
+            function funChangePassword(arg){
+                urlNew="../usermanager/ChangePassword.jsp?hdnPageAction=0";
+                window.open(urlNew);
+            }            
+            function getStudentDetails(arg){
+                
+                if (arg == 1) {
+                    urlNew="../resource/dashboard.jsp";
+                }else{
+                    urlNew="../resource/StudentDetailsResources.jsp?resourceid="+arg;
+                }if(arg==58)
+                    urlNew+="&StudentId="+$("#hdnstudentid").val();                        
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);
+            }
+            function getStudentFeeDues(){
+                urlNew="../accounts/FeedueIndex.jsp";
+                $('#form01').load(urlNew);
+            }
+            
+            function getCourseRegistration(){
+                urlNew="../academy/StudentCourseRegistrationIndex.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);
+            }
+            
+            function getACRSRegistration(){
+                urlNew="../academy/acrsRegistrationIndex.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);
+            }
+            
+            function getHourwiseAttendance(){
+                urlNew="../academy/studentHourWiseAttendance.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);
+            } 
+            
+            function getCourseLogDetails(){
+                urlNew="../academy/StudentCourseLogDetails.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);
+            } 
+            
+            function getInternalMarkDetails(){
+                urlNew="../academy/studentInternalMarkDetails.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);
+            }   
+            
+            function getInstruction(){
+                urlNew="../usermanager/Instruction.jsp";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);
+            }             
+            
+            function getStudentDetails1(arg,arg1){
+                urlNew="../resource/StudentDetailsResources.jsp?resourceid="+arg+"&error="+arg1;
+                $('#form01').load(urlNew);
+            }      
+            function funLogout(){
+                location.href = "Logout.jsp";
+            }
+            function funSaveRequest(arg){
+                if(document.getElementById('txtRemarks').value==""){
+                    alert('Remark should not be empty');
+                    document.getElementById('txtRemarks').focus();
+                    return false;
+                }
+                urlNew="../resource/StudentDetailsResources.jsp";
+                var lparameters = {resourceid:arg,Remarks:$("#txtRemarks").val(),
+                    StudentId:$("#hdnstudentid").val()};
+                $.post(urlNew,lparameters,function(data){
+                    $("#form01").html(data);
+                },"html");
+            }
+            function funDownloadIDCard() {
+                var rpturl = "../academy/report/PrintVirtualIDCard.jsp";
+                winObj = window.open(rpturl, "width=950,height=900,scrollbars=yes,left=40,top=150");
+                winObj.focus();
+            }
+            
+              function funLoadInboxMessage() {
+                urlNew = "../academy/InboxMessage.jsp?iden=1";
+                $('#form01').html('<img src="../resource/Image/loading.gif"/>');
+                $('#form01').load(urlNew);
+                
+            }
+        </script>
+        <link href="./sastra fee recipt till sem3_files/Menu_Consolidated.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+            .submenu{display: none;}
+            .style3 {
+                font-size: 14px;
+                font-weight: bold;
+                color: #FFFF00;
+            }
+            .style5 {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+                font-weight: bold;
+                color: #FFFFFF;
+            }
+            .style6 {color: #FFFFFF}
+        </style>
+    </head>
+    <body onload="getStudentDetails(1);" style="background-color:#fff">
+        <form name="frmStudentMain" method="post" action="https://webstream.sastra.edu/sastrapwi/usermanager/home.jsp" id="frmStudentMain">
+            <div class="holder01" style="width:99%">
+                <div style="background-color:#2a71a5;height:10px">&nbsp;</div>
+                   <div class="centralband01">
+                    <div class="leftpanel01">
+                        <div class="holder02">
+                            <div class="spacer02">
+                                <div id="masterdiv">                                   
+                                    
+                                    
+                                    <div class="menu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(1)" class="mainlink"><font size="2">Profile</font></a><br></div>
+                                    <div class="menu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:funLoadInboxMessage()" class="mainlink"><font size="2">Message(s)</font></a><br></div>
+                                    
+                                    <div class="menu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01(1).gif" border="0"><a href="javascript:getStudentDetails(59)" class="mainlink"><font size="2">Index Card</font></a><br></div>
+                                    
+                                    <div class="menu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><font size="2" color="#ffffff">Academic</font><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(4)" class="mainlink"><font size="2">Courses</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(40)" class="mainlink"><font size="2">Courses (Current Semester)</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(57)" class="mainlink"><font size="2">End&nbsp;Sem.&nbsp;Assessment</font></a><br></div>
+                                    
+                                    
+                                     <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getCourseRegistration()" class="mainlink"><font size="2">Course&nbsp;Registration</font></a><br></div>
+                                          
+                                    
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:funTimeTable()" class="mainlink"><font size="2">Timetable</font></a><br></div>
+                                    
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(26)" class="mainlink"><font size="2">Activities</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(22)" class="mainlink"><font size="2">Internal&nbsp;Marks</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getCourseLogDetails()" class="mainlink"><font size="2">Course&nbsp;Log</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(7)" class="mainlink"><font size="2">Attendance</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getHourwiseAttendance()" class="mainlink"><font size="2">Hour&nbsp;wise&nbsp;Attendance</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(25)" class="mainlink"><font size="2">Absent&nbsp;Details</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(43)" class="mainlink"><font size="2">Mentor</font></a><br></div>                                    
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(15)" class="mainlink"><font size="2">Mentor&nbsp;Meeting&nbsp;Details</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:funGrievance()" class="mainlink"><font size="2">Grievance</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:funCertificateRequest()" class="mainlink"><font size="2">Bonafide&nbsp;Request</font></a><br></div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <div class="menu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><font size="2" color="#ffffff">Student Support</font><br></div>
+                                    
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:funWelfareFundStatus()" class="mainlink"><font size="2">Welfare&nbsp;Fund&nbsp;Status</font></a><br></div>
+                                     
+                                    <div class="menu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><font size="2" color="#ffffff">Examination</font><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(23)" class="mainlink"><font size="2">Exam&nbsp;Schedule</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(35)" class="mainlink"><font size="2">Choice&nbsp;of&nbsp;Examination Centre</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(29)" class="mainlink"><font size="2">Nominal&nbsp;Roll</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(37)" class="mainlink"><font size="2">Hall&nbsp;Ticket</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(27)" class="mainlink"><font size="2">Hall&nbsp;Plan</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(28)" class="mainlink"><font size="2">Credits/Marks</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(61)" class="mainlink"><font size="2">Arrear Details</font></a><br></div>
+                                    
+                                    
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:funTranscriptRequest()" class="mainlink"><font size="2">Transcript&nbsp;Request</font></a><br></div>
+                                    
+                                    <div class="menu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><font size="2" color="#ffffff">Student Home</font><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(3)" class="mainlink"><font size="2">Room&nbsp;Details</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(32)" class="mainlink"><font size="2">Absent&nbsp;Abstract</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(33)" class="mainlink"><font size="2">Absent&nbsp;Details</font></a><br></div>
+                                    
+                                    <div class="menu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><font size="2" color="#ffffff">Accounts</font><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(12)" class="mainlink"><font size="2">Fee&nbsp;Collections</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentFeeDues()" class="mainlink"><font size="2">Fee&nbsp;Due</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:getStudentDetails(39)" class="mainlink"><font size="2">Fee&nbsp;Receipts</font></a><br></div>
+                                    <div class="nomenu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:funChangePassword(120862)" class="mainlink"><font size="2">Change&nbsp;Password</font></a><br></div>
+                                    <div class="menu"><img alt="" src="./sastra fee recipt till sem3_files/spacer01.gif" border="0"><a href="javascript:funLogout()" class="mainlink"><font size="2">Logout</font></a><br></div>
+                                        
+                                    
+                                </div>
+                                <div class="bottommenu01"></div>
+                                <br>
+                                <div class="spacer02">
+                                    <div class="paneltitle01">Your Info</div>
+                                    <div class="navcenter01">
+                                        <ul class="leftnavlinks01">
+                                            <li> Hari Ambani M </li>
+                                            <li> B.Tech.Computer Science &amp; Engineering (Cyber Security &amp; Blockchain Technology) </li>
+                                            <li> SASTRA</li>
+                                            <li> III Semester</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer02">
+                                <div class="paneltitle01">Other Services</div>
+                                <div class="navcenter01">
+                                    <ul class="leftnavlinks01">
+                                        <li>
+                                            Email : <a href="mailto:support@sastra.edu">support@sastra.ac.in</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightpanel01">
+                        <div align="center" style="Opacity:0.6;">
+                            <input type="hidden" id="hdnstudentid" name="hdnstudentid" value="120862">
+                            <img src="./sastra fee recipt till sem3_files/SASTRA-New-Logo.png" style="width:488px;height:104px;">
+                        </div>
+                        <div id="form01" class="form01">
+
+
+
+
+
+
+<link href="https://webstream.sastra.edu/sastrapwi/images/sastra_logo_1.gif" type="Image/x-icon" rel="icon">
+
+
+
+
+    
+<style type="text/css">
+     .imgPhoto{
+                -webkit-transform:scale(.99); /*Webkit: Scale down image to 0.8x original size*/
+                -moz-transform:scale(.99); /*Mozilla scale version*/
+                -o-transform:scale(.99); /*Opera scale version*/
+                -webkit-transition-duration: 0.5s; /*Webkit: Animation duration*/
+                -moz-transition-duration: 0.5s; /*Mozilla duration version*/
+                -o-transition-duration: 0.5s; /*Opera duration version*/
+                -moz-border-radius: 20px;
+                width:200px;
+                height:200px;
+                background: #fff;
+                background-color:#fff;
+            }
+
+            .imgPhoto:hover{
+                -webkit-transform:scale(1.1); /*Webkit: Scale up image to 1.2x original size*/
+                -moz-transform:scale(1.1); /*Mozilla scale version*/
+                -o-transform:scale(1.1); /*Opera scale version*/
+                box-shadow:0px 0px 10px gray; /*CSS3 shadow: 30px blurred shadow all around image*/
+                -webkit-box-shadow:0px 0px 10px gray; /*Safari shadow version*/
+                -moz-box-shadow:0px 0px 10px gray; /*Mozilla shadow version*/
+                opacity: 1;
+                cursor:pointer ;
+                -moz-border-radius: 20px;
+                width:200px;
+                height:200px;
+                padding: 5px;
+                background: #fff;
+                border: 1px solid #ddd;
+                display: block;
+            }
+
+ </style>
+  <link type="text/css" href="./sastra fee recipt till sem3_files/jquery-ui-1.8.15.custom.css" rel="stylesheet">
+ <script type="text/javascript" src="./sastra fee recipt till sem3_files/jquery-1.6.2.min.js.download"></script>
+<script type="text/javascript" src="./sastra fee recipt till sem3_files/jquery-ui-1.8.15.custom.min.js.download"></script>
+<script type="text/javascript" src="./sastra fee recipt till sem3_files/jquery.form.js.download"></script>
+<link type="text/css" href="./sastra fee recipt till sem3_files/studentstyle.css" rel="stylesheet">
+
+<script type="text/javascript">
+    function funRevaluation(){
+        var checkedcount=0;
+        var totcount=0;
+        var i=0;
+        var subjects="";
+        totcount=document.getElementById("hdnReqCount").value;
+        for (i=1;i<=totcount;i++){
+            if (document.getElementById("chkSubject__"+i).checked){
+                checkedcount++;
+                if(subjects==""){
+                    subjects=document.getElementById("chkSubject__"+i).value;
+                }else{
+                    subjects=subjects+","+document.getElementById("chkSubject__"+i).value;
+                }
+            }
+        }
+        if(checkedcount>2){
+            alert("Cannot able to request for more than two subjects")
+            subjects="";
+            return false;
+        }
+        var examonth=document.getElementById("hdnExamMonth").value;
+        var examyear=document.getElementById("hdnExamYear").value;
+        urlNew="../resource/StudentDetailsResources.jsp?resourceid=31&ExamMonth="+examonth+"&ExamYear="+examyear+"&Subjects="+subjects;
+        $('#form01').html('<img src="../images/loading.gif"/>');
+        $('#form01').load(urlNew);        
+    }  
+    
+    function funExamCenterRequest(){
+        var examcenterid=document.getElementById("cmbCenter").value;
+        urlNew="../resource/StudentDetailsResources.jsp?resourceid=36&ExamCenter="+examcenterid;
+        $('#form01').html('<img src="../images/loading.gif"/>');
+        $('#form01').load(urlNew);        
+    }    
+    
+    function funExamCenterAgree(){
+        var agreeid;
+        if(document.getElementById("chkExamCenter").checked==true){
+            agreeid=1;
+        }else{
+            agreeid=0;
+        }
+        if(agreeid==1){
+            document.getElementById("cmdSubmit").disabled=false;
+        }else{
+            document.getElementById("cmdSubmit").disabled=true;
+        }    
+
+    }    
+    
+     function funHallTicketAgree(){
+        var agreeid;
+        if(document.getElementById("chkExamHallticket").checked==true){
+            agreeid=1;
+        }else{
+            agreeid=0;
+        }
+        if(agreeid==1){
+            document.getElementById("cmdHallTicketPrint").disabled=false;
+            window.open("https://sastra.edu/Hallticketinst/","_blank")
+        }else{
+            document.getElementById("cmdHallTicketPrint").disabled=true;
+        }    
+    }    
+    
+    function funPrintHallTicket(){
+        var url="../academy/PrintReport.jsp?";
+        window.open(url,"newWin","toolbars=yes,menubars=yes,resize=no,scrollbars=yes");
+    }
+    function funPrintProvisionalCertificate(){
+        var url="../academy/PrintProvisionalCertificate.jsp?";
+        window.open(url,"newWin","toolbars=yes,menubars=yes,resize=no,scrollbars=yes");
+    }
+    function funPrintCWStatement(){
+        var url="../academy/PrintCWStatement.jsp?";
+        window.open(url,"newWin","toolbars=yes,menubars=yes,resize=no,scrollbars=yes");
+    }
+    function funCheckBonafide(){
+        document.getElementById("cmdBonafiedPrint").disabled=false;
+    }
+    function funBonafide(){
+        var arg;
+        if(document.getElementById("optEducation").checked){
+           arg=1;
+        }else{
+           arg=2;  
+        }    
+        var url="../academy/printBonafide.jsp?iden="+arg;
+        window.open(url,"newWin","toolbars=yes,menubars=yes,resize=no,scrollbars=yes");
+    }
+    function funBonafideOL(){
+        var arg=3;
+        var url="../academy/printBonafide.jsp?iden="+arg;
+        window.open(url,"newWin","toolbars=yes,menubars=yes,resize=no,scrollbars=yes");
+    }
+    function funPrintCIA(){
+        var url="../academy/PrintCIA.jsp?StudentId=120862";
+        window.open(url,"newWin","toolbars=yes,menubars=yes,resize=no,scrollbars=yes");
+    }  
+    function funAcknowledgeAadhar(){
+        urlNew="../resource/StudentDetailsResources.jsp?resourceid=34";
+        $('#form01').html('<img src="../images/loading.gif"/>');
+        $('#form01').load(urlNew);        
+    } 
+    function funPayOnline(arg){
+        var tranid=document.getElementById("hdnTranactionIds").value;
+        if(arg==1){
+            urlNew="../online/billdeskRequest.jsp?transactionids="+tranid+"&regno=126157017";
+        }       
+        if(arg==2){
+            urlNew="../online/CUBRequest.jsp?transactionids="+tranid+"&regno=126157017";
+        }
+        $('#form01').html('<img src="../images/loading.gif"/>');
+        $('#form01').load(urlNew);  
+    } 
+    
+    function funVerification(argonlinereceiptid,argReceiptAmount,argReceiptMode,argInstitutionId){
+        if (argReceiptMode==4){
+            urlNew="../online/CUBVerification.jsp?onlinereceiptid="+argonlinereceiptid;
+            urlNew+="&receiptAmount="+argReceiptAmount+"&InstitutionId="+argInstitutionId
+        }else if(argReceiptMode==5){
+            urlNew="../online/billdeskVerification.jsp?onlinereceiptid="+argonlinereceiptid;
+            urlNew+="&receiptAmount="+argReceiptAmount+"&InstitutionId="+argInstitutionId        
+        }
+        $('#form01').html('<img src="../images/loading.gif"/>');
+        $('#form01').load(urlNew);      
+    }
+    function funPrintReeipt(arg){
+        /*urlNew="../online/onlineReceipt.jsp?Printedslno="+arg;
+        $('#form01').html('<img src="../images/loading.gif"/>');
+        $('#form01').load(urlNew);*/
+        myWindow=window.open("../online/onlineReceipt.jsp?Printedslno="+arg,this.target);
+        myWindow.focus() 
+    } 
+    function funCheckDue(){
+        var rowcount=document.getElementById("hdnDueCount").value;
+        var tranData="";
+        var dueamount=0;
+        var tranids="";
+        for (i=1; i<= rowcount; i++){
+            if (document.getElementById('chkFeeDue'+i).checked){
+                tranData=document.getElementById('chkFeeDue'+i).value;
+                var arr=tranData.split(",");
+                due=arr[0];
+                tranid=arr[1];
+                dueamount=eval(dueamount)+eval(due);
+                if(tranids == ""){
+                    tranids=tranid;
+                }else{
+                    tranids+=","+tranid;
+                }
+            }
+        }
+        document.getElementById("hdnTranactionIds").value=tranids;
+        if (dueamount > 0){
+            document.getElementById("hdnDueAmount").innerHTML='Amount selected to pay: &#8377; '+dueamount.toFixed(2);
+            $('#btnPayOnline').show();
+        }else{
+            document.getElementById("hdnDueAmount").innerHTML='Click "check box" above to initiate payment';
+            $('#btnPayOnline').hide();
+        }
+}
+
+ var imageName;
+    var d;
+
+    function funCheckPhotoUpLoadClose() {
+        var rn = Math.floor(Math.random() * 101);
+        document.getElementById('divImage').innerHTML = "<img class='imgPhoto' alt='Photo upload failed' src='../resource/Image/" + imageName + "?en=" + rn + "' style='width:100%;height:100%'>";
+        d.dialog("close");
+    }
+
+    function funPhotoUpload(arg1, arg2) {
+        imageName = arg1;
+        var url = "../resource/imageCropUpload.jsp?imagename=" + arg1 + "&imageid=" + arg2;
+        d = $('#divDialog').html('<iframe id="ifrm" frameborder="0" style="height:100%;width:100%"></iframe>');
+        d.dialog({
+            width: 800,
+            height: 600,
+            modal: true,
+            closeOnEscape: true
+        });        
+        $("#divDialog>#ifrm").attr("src", url);
+        document.getElementById('divInfo').style.display = "none";
+    }
+    
+    function funPhotoUploadModify(arg1, arg2) {
+        imageName = arg1;
+        var url = "../resource/imageCropUpload.jsp?imagename=" + arg1 + "&imageid=" + arg2 + "&pageAction=51";
+        d = $('#divDialog').html('<iframe id="ifrm" frameborder="0" style="height:100%;width:100%"></iframe>');
+        d.dialog({
+            width: 800,
+            height: 600,
+            modal: true,
+            closeOnEscape: true
+        });
+        $("#divDialog>#ifrm").attr("src", url);
+    }
+    
+</script>
+<br>
+
+
+
+
+
+
+
+
+    <table cellspacing="1" cellpadding="10" width="97%" bgcolor="#545454" border="0" style="margin: 5px;">
+
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+        <tbody><tr class="ui-widget-header"><td colspan="4">FEE Receipts</td> </tr>
+        <tr class="ui-widget-header">
+            <td width="15%" class="tabletitle05">Receipt No.</td>
+            <td width="15%" class="tabletitle05">Receipt Date</td>
+            <td width="55%" class="tabletitle05">Particulars</td>
+            <td width="15%" class="tabletitle05">Receipt Amount</td>
+        </tr>
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;591470&#39;)"><u>591470</u></td>
+                <td width="15%" class="tablecontent01"> 11-12-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Fine - Bonafide </td>
+                <td width="15%" class="tablecontent01" align="right"> 100.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;853674&#39;)"><u>853674</u></td>
+                <td width="15%" class="tablecontent01"> 13-11-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Mess Fee Oct/2023</td>
+                <td width="15%" class="tablecontent01" align="right"> 4,243.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;586412&#39;)"><u>586412</u></td>
+                <td width="15%" class="tablecontent01"> 02-11-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Minor Specialization Fee <br>Examination Fees </td>
+                <td width="15%" class="tablecontent01" align="right"> 4,900.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;847398&#39;)"><u>847398</u></td>
+                <td width="15%" class="tablecontent01"> 10-10-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Mess Fee Sep/2023</td>
+                <td width="15%" class="tablecontent01" align="right"> 4,264.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;843106&#39;)"><u>843106</u></td>
+                <td width="15%" class="tablecontent01"> 19-09-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Mess Fee Aug/2023</td>
+                <td width="15%" class="tablecontent01" align="right"> 4,481.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;836671&#39;)"><u>836671</u></td>
+                <td width="15%" class="tablecontent01"> 31-08-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Mess Fee Jul/2023</td>
+                <td width="15%" class="tablecontent01" align="right"> 1,977.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;572627&#39;)"><u>572627</u></td>
+                <td width="15%" class="tablecontent01"> 14-08-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Revaluation Fee </td>
+                <td width="15%" class="tablecontent01" align="right"> 2,000.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;831645&#39;)"><u>831645</u></td>
+                <td width="15%" class="tablecontent01"> 26-07-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Hostel Admission Fee <br>Hostel-Lodging Fee </td>
+                <td width="15%" class="tablecontent01" align="right"> 14,100.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;225109&#39;)"><u>225109</u></td>
+                <td width="15%" class="tablecontent01"> 12-07-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Sports &amp; games <br>Unit Test Fee <br>Tuition Fees </td>
+                <td width="15%" class="tablecontent01" align="right"> 79,750.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;825958&#39;)"><u>825958</u></td>
+                <td width="15%" class="tablecontent01"> 12-07-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Mess Fee Jun/2023</td>
+                <td width="15%" class="tablecontent01" align="right"> 4,234.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;822908&#39;)"><u>822908</u></td>
+                <td width="15%" class="tablecontent01"> 18-06-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Mess Fee May/2023</td>
+                <td width="15%" class="tablecontent01" align="right"> 4,052.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;554878&#39;)"><u>554878</u></td>
+                <td width="15%" class="tablecontent01"> 22-05-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Examination Fees </td>
+                <td width="15%" class="tablecontent01" align="right"> 2,000.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;818752&#39;)"><u>818752</u></td>
+                <td width="15%" class="tablecontent01"> 17-05-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Mess Fee Apr/2023</td>
+                <td width="15%" class="tablecontent01" align="right"> 3,885.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;812246&#39;)"><u>812246</u></td>
+                <td width="15%" class="tablecontent01"> 14-04-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Mess Fee Mar/2023</td>
+                <td width="15%" class="tablecontent01" align="right"> 3,993.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;808978&#39;)"><u>808978</u></td>
+                <td width="15%" class="tablecontent01"> 17-03-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Mess Fee Feb/2023</td>
+                <td width="15%" class="tablecontent01" align="right"> 2,414.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;540248&#39;)"><u>540248</u></td>
+                <td width="15%" class="tablecontent01"> 28-02-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Brekage Due </td>
+                <td width="15%" class="tablecontent01" align="right"> 370.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;804563&#39;)"><u>804563</u></td>
+                <td width="15%" class="tablecontent01"> 18-02-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Mess Fee Jan/2023</td>
+                <td width="15%" class="tablecontent01" align="right"> 4,190.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;214172&#39;)"><u>214172</u></td>
+                <td width="15%" class="tablecontent01"> 02-02-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Tuition Fees </td>
+                <td width="15%" class="tablecontent01" align="right"> 75,000.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;532766&#39;)"><u>532766</u></td>
+                <td width="15%" class="tablecontent01"> 02-02-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Students  Welfare Fund </td>
+                <td width="15%" class="tablecontent01" align="right"> 1,000.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;797831&#39;)"><u>797831</u></td>
+                <td width="15%" class="tablecontent01"> 16-01-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Breakage Fine Dec/2022<br>Mess Fee Dec/2022</td>
+                <td width="15%" class="tablecontent01" align="right"> 4,019.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;528348&#39;)"><u>528348</u></td>
+                <td width="15%" class="tablecontent01"> 03-01-2023</td>
+                <td width="45%" class="tablecontent01" align="left"> Books Cost </td>
+                <td width="15%" class="tablecontent01" align="right"> 7,000.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;526951&#39;)"><u>526951</u></td>
+                <td width="15%" class="tablecontent01"> 27-12-2022</td>
+                <td width="45%" class="tablecontent01" align="left"> Examination Fees </td>
+                <td width="15%" class="tablecontent01" align="right"> 1,800.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;792695&#39;)"><u>792695</u></td>
+                <td width="15%" class="tablecontent01"> 17-12-2022</td>
+                <td width="45%" class="tablecontent01" align="left"> Mess Fee Nov/2022</td>
+                <td width="15%" class="tablecontent01" align="right"> 3,867.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;786999&#39;)"><u>786999</u></td>
+                <td width="15%" class="tablecontent01"> 26-11-2022</td>
+                <td width="45%" class="tablecontent01" align="left"> Mess Fee Oct/2022</td>
+                <td width="15%" class="tablecontent01" align="right"> 3,432.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;777541&#39;)"><u>777541</u></td>
+                <td width="15%" class="tablecontent01"> 25-09-2022</td>
+                <td width="45%" class="tablecontent01" align="left"> Hostel Admission Fee <br>Caution Deposit - Hostel <br>Hostel-Lodging Fee </td>
+                <td width="15%" class="tablecontent01" align="right"> 16,100.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;8193&#39;)"><u>8193</u></td>
+                <td width="15%" class="tablecontent01"> 21-08-2022</td>
+                <td width="45%" class="tablecontent01" align="left"> Development Charges </td>
+                <td width="15%" class="tablecontent01" align="right"> 10,000.00</td>
+            </tr>    
+          
+            
+            <tr>
+                <td style="cursor:pointer" width="15%" class="tablecontent02" onclick="funPrintReeipt(&#39;203319&#39;)"><u>203319</u></td>
+                <td width="15%" class="tablecontent01"> 21-08-2022</td>
+                <td width="45%" class="tablecontent01" align="left"> Dept. Association Fees <br>Medical Exam Fees <br>Registration and ID Card <br>Mark Veri. Fee &amp; others <br>Admission Fee <br>Personality Development <br>Sports &amp; games <br>Unit Test Fee <br>Tuition Fees </td>
+                <td width="15%" class="tablecontent01" align="right"> 82,000.00</td>
+            </tr>    
+        
+        <tr>
+            <td class="tablecontent01" colspan="3" align="right"><font color="black"> <b>Total :</b></font></td>
+            <td class="tablecontent01" align="right"><font color="black"><b> 3,45,171.00</b></font></td>
+        </tr>    
+        
+
+        
+
+    </tbody></table>
+    
+<!--
+    else if (intResourceId == 20) {
+        int intOfficeId = 0, intPreOfficeId = 0;
+        double dblCrTotal = 0, dblDtTotal = 0;
+        double dblGDTotal = 0;
+        int intVerificationCount=0;
+
+    %>
+
+    
+--></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    
+
+</body></html>
