@@ -1,7 +1,23 @@
 var express = require('express')
 const fs = require('fs')
+const cors = require('cors');
+const multer = require('multer')
 const Product = require('../models/ProductsModel')
 const router = express.Router()
+router.use(cors());
+
+const path = require('path');
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, 'productPictures')); // ensure folder exists
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  }
+});
+
+
+const upload = multer({storage})
 
 const CheckIsAdmin = (req,res,next)=>{
     //check if user is admin
@@ -18,11 +34,24 @@ router.get('/get',(req,res)=>{
 })
 
 //request body
-router.post('/create',async (req,res)=>{
-    console.log(req.body)
-    const result = await Product.create(req.body)
-    res.send("Product created successfully by postman (POST)")
-})
+router.post('/create', CheckIsAdmin, upload.single('file'), async (req, res) => {
+  try {
+    const parsedFeatures = JSON.parse(req.body.features); // 👈 parse features string to array
+    const productData = {
+      name: req.body.name,
+      features: parsedFeatures,
+      price: req.body.price,
+      filename: req.body.filename
+    };
+
+    const result = await Product.create(productData);
+    res.status(201).json({ message: "Product created successfully" });
+  } catch (err) {
+    console.error("Product creation error:", err);
+    res.status(400).json({ message: "Failed to create product", error: err.message });
+  }
+});
+
 
 router.get('/getAllProducts',async (req,res)=>{
         const productList = await Product.find();

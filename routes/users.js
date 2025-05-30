@@ -100,8 +100,6 @@ router.post("/login", async (req, res) => {
 });
 
 
-
-
 async function authenticate(username, password) {
   const user = await User.findOne({ username: username });
   if (!user) return null;

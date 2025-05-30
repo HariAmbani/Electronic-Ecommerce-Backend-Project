@@ -72,3 +72,12 @@
 
 // const User = mongoose.model('User', userSchema);
 // module.exports = User;
+
+
+//----------
+
+//product model image
+// image: {
+//     type: String,
+//     default: 'https://via.placeholder.com/150',
+//   },
