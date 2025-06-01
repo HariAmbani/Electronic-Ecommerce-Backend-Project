@@ -6,6 +6,7 @@ const router = express.Router();
 const path = require("path");
 const bcrypt = require('bcrypt'); // Make sure it's imported
 
+
 // Serve static files from uploads/ (e.g., /users/uploads/filename.jpg)
 router.use('/profilePhotos', express.static(path.join(__dirname, 'profilePictures')));
 

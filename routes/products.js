@@ -7,6 +7,15 @@ const router = express.Router()
 router.use(cors());
 
 const path = require('path');
+const uploadPathOne = path.join(__dirname, 'productPictures');
+if (!fs.existsSync(uploadPathOne)) {
+  fs.mkdirSync(uploadPathOne);
+}
+const uploadPathTwo = path.join(__dirname, 'profilePictures');
+if (!fs.existsSync(uploadPathTwo)) {
+  fs.mkdirSync(uploadPathTwo);
+}
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, path.join(__dirname, 'productPictures')); // ensure folder exists
@@ -25,19 +34,15 @@ const CheckIsAdmin = (req,res,next)=>{
     next()
 }
 
-router.get('/',(req,res)=>{
-    res.send("welcome to product section , try correct sub-directories to access files")
-})
-
-router.get('/get',(req,res)=>{
-    res.send("assignment get method called")
-})
-
 //request body
 router.post('/create', CheckIsAdmin, upload.single('file'), async (req, res) => {
   try {
-    const parsedFeatures = JSON.parse(req.body.features); // 👈 parse features string to array
+    const parsedFeatures = JSON.parse(req.body.features);
+
+    const nextProductId = await Product.getNextProductId();
+
     const productData = {
+      productId: nextProductId,
       name: req.body.name,
       features: parsedFeatures,
       price: req.body.price,
@@ -45,7 +50,7 @@ router.post('/create', CheckIsAdmin, upload.single('file'), async (req, res) => 
     };
 
     const result = await Product.create(productData);
-    res.status(201).json({ message: "Product created successfully" });
+    res.status(201).json({ message: "Product created successfully", product: result });
   } catch (err) {
     console.error("Product creation error:", err);
     res.status(400).json({ message: "Failed to create product", error: err.message });
@@ -62,22 +67,11 @@ router.get('/getAllProducts',async (req,res)=>{
 router.post('/createByData',CheckIsAdmin, async(req,res)=>{
     newProduct={
         'productId':"1",
-        'productName':"samsung galaxy book 4",
-        'productFeatures':"Intel core 5, 15.6 inch IPS LED, 16GB RAM, 512GB SSD, LAN port",
-        'productPrice':"54,990"
+        'Name':"samsung galaxy book 4",
+        'Features':["Intel core 5", "15.6 inch IPS LED", "16GB RAM", "512GB SSD", "LAN port"],
+        'Price':"54,990"
     }
     await Product.create(newProduct)
-    res.send("Product created successfully (POST)")
-})
-
-router.post('/createNext', (req,res)=>{
-    newProduct={
-        'productId':"2",
-        'productName':"sam",
-        'productFeatures':"Intelt",
-        'productPrice':"990"
-    }
-    Product.create(newProduct)
     res.send("Product created successfully (POST)")
 })
 

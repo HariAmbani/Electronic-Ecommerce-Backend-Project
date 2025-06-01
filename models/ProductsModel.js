@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
+  productId: {
+    type: Number,
+    required: true,
+    unique: true 
+  },
   name: {
     type: String,
     required: true,
@@ -20,8 +25,15 @@ const productSchema = new Schema({
     required: true
   }
 }, {
-  timestamps: true // adds createdAt and updatedAt fields
+  timestamps: true
 });
 
+// ✅ Add this static method to the schema
+productSchema.statics.getNextProductId = async function () {
+  const lastProduct = await this.findOne().sort({ productId: -1 });
+  return lastProduct ? lastProduct.productId + 1 : 1;
+};
+
+// ✅ Create and export model after the static method
 const Product = mongoose.model('Product', productSchema);
 module.exports = Product;
