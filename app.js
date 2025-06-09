@@ -12,6 +12,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/products') 
 var cartRouter = require('./routes/cartProducts')
+var orderRouter = require('./routes/orderProducts')
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use('/productPictures', express.static(path.join(__dirname, 'routes/productP
 app.use('/users', usersRouter);
 app.use('/products',productRouter);
 app.use('/cart',cartRouter)
+app.use('/orders',orderRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -56,6 +58,5 @@ const db = mongoose.connection;
 db.once('open',()=>{
     console.log("Connect to mongodb")
 })
-
 
 module.exports = app;
