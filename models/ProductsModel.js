@@ -28,12 +28,6 @@ const productSchema = new Schema({
   timestamps: true
 });
 
-// ✅ Add this static method to the schema
-productSchema.statics.getNextProductId = async function () {
-  const lastProduct = await this.findOne().sort({ productId: -1 });
-  return lastProduct ? lastProduct.productId + 1 : 1;
-};
-
 // ✅ Create and export model after the static method
 const Product = mongoose.model('Product', productSchema);
 module.exports = Product;
